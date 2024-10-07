@@ -1,16 +1,22 @@
 {
-  "name": "pointer-client-ts",
-  "version": "1.0.1",
-  "description": "",
+  "name": "@we-made/pointer-client",
+  "version": "1.0.2",
+  "description": "Client for working with Pointer APIs",
+  "repository": "https://github.com/wemadefree/pointer-client-ts",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"No tests yet\"",
     "build": "tsc"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "We Made AS",
+  "license": "MIT",
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
   "devDependencies": {
     "@types/node": "^22.6.1",
     "typescript": "^5.6.2"
