@@ -12,7 +12,7 @@ The package is written in TypeScript and utilizes Axios.
 ### Setup
 ```npm install @we-made/pointer-client```
 
-Import the package into you main javascript file and create a new pointer client. This package is bundled with an auth client for Firebase. To authenticate with a service account, check out the [service-account-auth-client-ts](https://github.com/we-made/service-account-auth-client-ts) package.
+Import the package into you main javascript file and create a new pointer client. This package is bundled with an auth client for Firebase. To authenticate with a service account, check out the [service-account-auth-client](https://github.com/wemadefree/service-account-auth-client) package.
 
 The PointerClient requires ```PointerTenantID```, ```PointerBaseApiUrl```, and an object for firebase credentials containing ```projectId```, ```authDomain```, ```apiKey```, ```appId```, ```measurementId```, and ```tenantId```.
 
