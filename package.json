@@ -1,6 +1,6 @@
 {
   "name": "@we-made/pointer-client",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Client for working with Pointer APIs",
   "repository": "https://github.com/wemadefree/pointer-client-ts",
   "main": "dist/index.js",
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "axios": "^1.7.7",
-    "axios-retry": "^4.5.0",
-    "firebase": "^10.13.2"
+    "axios-retry": "^4.5.0"
   }
 }

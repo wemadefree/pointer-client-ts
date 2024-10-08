@@ -12,9 +12,10 @@ The package is written in TypeScript and utilizes Axios.
 ### Setup
 ```npm install @we-made/pointer-client```
 
-Import the package into you main javascript file and create a new pointer client. This package is bundled with an auth client for Firebase. To authenticate with a service account, check out the [service-account-auth-client](https://github.com/wemadefree/service-account-auth-client) package.
+Import the package into you main javascript file and create a new pointer client. To authenticate you'll need to include an auth client. See the [Authenticate](#authenticate) section for more information.
 
-The PointerClient requires ```PointerTenantID```, ```PointerBaseApiUrl```, and an object for firebase credentials containing ```projectId```, ```authDomain```, ```apiKey```, ```appId```, ```measurementId```, and ```tenantId```.
+
+The PointerClient requires ```PointerTenantID``` and ```PointerBaseApiUrl```
 
 Remember to run the ```build```function after creating the new ```PointerClient```
 
@@ -23,7 +24,8 @@ Example for Vue.js (main.js):
 ```
 import { createApp } from 'vue'
 import App from './App.vue'
-import { PointerClient, FirebaseAuthClient } from '@we-made/pointer-client'
+import { PointerClient } from '@we-made/pointer-client'
+import { FirebaseAuthClient } from '@we-made/firebase-auth-client'
 
 const app = createApp(App)
 
@@ -52,21 +54,14 @@ app.config.globalProperties.$pointerClient = pointerClient
 app.mount('#app')
 ```
 
-It's possible to pass the pointerConfig key (as i ```string```) instead of the firebase credentials ```object``` in the ```FirebaseAuthClient```. 
-
-```
-
-const authClient = new FirebaseAuthClient(
-    process.env.VUE_APP_POINTER_BASE_URL, // Base URL for the API
-    process.env.VUE_APP_POINTER_PORTAL_CONFIG_KEY // Portal config key for pointer. Used to fetch firebase credentials
-)
-```
-
 ### Authenticate
 
-The PointerClient requires a user to authenticate to be able to query the pointer API. To authenticate the user, call the ```login``` function. This function will trigger a google login by default. Use the ```getLoginOptions``` function to get all available login providers. For more information about these functions, go to the [Available functions](#available-functions) section.
+There are 2 available packages for authentication. It's also possible to write your own auth client.
 
-If authentication fails, the error message from firebase will be stored in ```sessionStorage``` as ```loginFailed```
+#### Available auth clients
+- [ServiceAccountAuthClient](https://github.com/wemadefree/service-account-auth-client) for service account authentication (server side authentication).
+- [FirebaseAuthClient](https://github.com/wemadefree/firebase-auth-client) for firebase authentication (client side authentication).
+
 
 ### Usage
 
