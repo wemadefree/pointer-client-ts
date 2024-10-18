@@ -129,6 +129,7 @@ Fetches a row of a given entity based on the ID of the row.
 ##### Input parameters:
 - Entity: ```string```, required
 - RowID: ```string```, required
+- Query params: ```object```, optional
 
 ##### Example: 
 ```

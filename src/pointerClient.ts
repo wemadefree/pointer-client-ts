@@ -27,9 +27,9 @@ export class PointerClient extends AxiosClient {
         return this.entityError(entityId)
     }
 
-    async getEntityRow(entityId: string, rowId: string) {
+    async getEntityRow(entityId: string, rowId: string, query?: {}) {
         if (await this.checkIfEndpointExists(entityId)) {
-            return await this.get(`/${this.availableEntities[entityId].apiId}/tenants/${this.tenantId}/${entityId}/${rowId}`)
+            return await this.get(`/${this.availableEntities[entityId].apiId}/tenants/${this.tenantId}/${entityId}/${rowId}`, query)
         }
 
         return this.entityError(entityId)
