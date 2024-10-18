@@ -166,7 +166,7 @@ export class PointerClient extends AxiosClient {
 
 export interface PointerClient {
     listEntityData(entityId: string, query?: {}): Promise<any>;
-    getEntityData(entityId: string, rowId: string): Promise<any>;
+    getEntityData(entityId: string, rowId: string, query?: {}): Promise<any>;
     createEntityRow(entityId: string, data: Object): Promise<any>;
     updateEntityRow(entityId: string, rowId: string, data: Object): Promise<any>;
     updateEntityRowAssociations(entityId: string, rowId: string, data: IEntityAssociation): Promise<any>;
