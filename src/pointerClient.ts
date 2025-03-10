@@ -159,6 +159,12 @@ export class PointerClient extends AxiosClient {
         }
     }
 
+    async loginWithEmailAndPassword(email: string, password: string) {
+        if (this.authClient.loginWithEmailAndPassword) {
+            await this.authClient.loginWithEmailAndPassword(email, password);
+        }
+    }
+
     entityError(entityId: string) {
         return {code: 404, message: `Entity ${entityId} not found`}
     }

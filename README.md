@@ -98,6 +98,18 @@ Triggers the authentication process in firebase. This defaults to use the google
 await this.$pointerClient.login('microsoft.com');
 ```
 
+#### loginWithEmailAndPassword
+Triggers the authentication process in firebase. This requires a username and password.
+
+##### Input parameters:
+- email: ```string```
+- password ```string```
+
+##### Example: 
+```
+await this.$pointerClient.loginWithEmailAndPassword('example@example.com', 'your-password-here');
+```
+
 #### getLoginOptions
 Fetches the available login providers. These providers can be passed as providerId in the ```login```function
 
