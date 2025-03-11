@@ -78,6 +78,7 @@ The function called will fetch the customers for the pointer tenant.
 ### Available functions
 
 - [login](#login)
+- [loginWithEmailAndPassword](#loginWithEmailAndPassword)
 - [getLoginOptions](#getloginoptions)
 - [listEntityRows](#listentityrows)
 - [getEntityRow](#getentityrow)
@@ -86,6 +87,7 @@ The function called will fetch the customers for the pointer tenant.
 - [deleteEntityRow](#deleteentityrow)
 - [getEntityProperties](#getentityproperties)
 - [getEnumLabel](#getenumlabel)
+- [whoAmI](#whoAmI)
 
 #### login
 Triggers the authentication process in firebase. This defaults to use the google provider (```google.com```)
@@ -226,3 +228,13 @@ A helper function to fetch the label value of an enum option based on the enum o
 const result = await this.$pointerClient.getEnumLabel('tasks', 'statusPhase', 'OPEN');
 ```
 
+#### whoAmI
+Fetches information about the authenticated user
+
+##### Input parameters:
+- Pointer config key: ```string```, required
+
+##### Example: 
+```
+const result = await this.$pointerClient.whoAmI('p2-config-key');
+```

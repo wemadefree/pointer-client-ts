@@ -74,6 +74,10 @@ export class PointerClient extends AxiosClient {
      * 
      */
 
+    async whoAmI(key: string) {
+        return await this.get(`/xrm-tenants/v1/login/whoAmI?key=${key}`);
+    }
+
     async checkIfEndpointExists(entityId: string) {
         if (Object.keys(this.availableEntities).length === 0) {
             await this.getAvailableEndpoints()
@@ -178,6 +182,7 @@ export interface PointerClient {
     updateEntityRowAssociations(entityId: string, rowId: string, data: IEntityAssociation): Promise<any>;
 
     // Helpers
+    whoAmI(key: string): Promise<any>;
     checkIfEndpointExists(entityId: string): Promise<boolean>;
     getAvailableEndpoints(): Promise<void>;
     getEntityProperties(entityId: string): Promise<IAvailableEntityProperties[]>;
