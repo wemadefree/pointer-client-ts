@@ -169,6 +169,12 @@ export class PointerClient extends AxiosClient {
         }
     }
 
+    async sendPasswordResetEmail(email: string) {
+        if (this.authClient.sendPasswordResetEmail) {
+            await this.authClient.sendPasswordResetEmail(email);
+        }
+    }
+
     entityError(entityId: string) {
         return {code: 404, message: `Entity ${entityId} not found`}
     }
